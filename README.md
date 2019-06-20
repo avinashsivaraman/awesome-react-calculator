@@ -3,7 +3,7 @@
 Awesome React Calculator is a React Component library. It gives you a simple calculator component to work in your project. It supports keyboard and you can paste your expression to get the result.
 
 
-[![npm version](https://img.shields.io/badge/npm-1.0.3-blue.svg)](https://www.npmjs.com/package/awesome-react-calculator)
+[![npm version](https://img.shields.io/badge/npm-1.0.5-blue.svg)](https://www.npmjs.com/package/awesome-react-calculator)
 
 ## Installation
 
@@ -27,26 +27,27 @@ yarn add awesome-react-calculator
 
 import React, {Component} from 'react'
 import {render} from 'react-dom'
+import Calculator from "awesome-react-calculator";
 
-import Calculator from '../../src'
 const style = {
   height: '24rem',
   width: '15rem'
 }
+
 class Demo extends Component {
   handleInput(input) {
-    console.log(`${input} key is pressed or entered`)
+    console.log(`${input.expression} is shown in the calculator, User clicked the ${input.key}`)
   }
 
   onResultChange(newResult) {
-    console.log(`${newResult} has been shown`)
+    console.log(newResult)
+    console.log(`${newResult.expression} is validated as ${newResult.result} `)
   }
   render() {
     return <div className='calculator-demo' style={style}>
       <h1>Calculator</h1>
       <Calculator
-        onKeyPress={this.handleInput}
-        onButtonClick={this.handleInput}
+        onNewInput={this.handleInput}
         onResultChange={this.onResultChange}/>
     </div>
   }
@@ -59,9 +60,8 @@ render(<Demo/>, document.querySelector('#demo'))
 ### Props
 | Props  | Return Type   | Usage |
 |---|---|--- |
-| OnKeyPress  | string | Triggered when some key is pressed|
-| onButtonClick  | string | Triggered when some button is clicked|
-| onResultChange  | string | Returns the result shown in calculator and triggered whenever the result is changed|
+| onNewInput  | object {expression: string, key: string} | Triggered when some input is entered|
+| onResultChange  | object {expression: string, result: string}  | Returns the result shown in calculator and triggered whenever the result is changed|
 
 
 ### Note

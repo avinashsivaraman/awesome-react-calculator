@@ -8,18 +8,18 @@ const style = {
 }
 class Demo extends Component {
   handleInput(input) {
-    console.log(`${input} key is pressed or entered`)
+    console.log(`${input.expression} is shown in the calculator, User clicked the ${input.key}`)
   }
 
   onResultChange(newResult) {
-    console.log(`${newResult} has been shown`)
+    console.log(newResult)
+    console.log(`${newResult.expression} is validated as ${newResult.result} `)
   }
   render() {
     return <div className='calculator-demo' style={style}>
       <h1>Calculator</h1>
       <Calculator
-        onKeyPress={this.handleInput}
-        onButtonClick={this.handleInput}
+        onNewInput={this.handleInput}
         onResultChange={this.onResultChange}/>
     </div>
   }
