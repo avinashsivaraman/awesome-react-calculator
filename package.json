@@ -1,7 +1,7 @@
 {
   "name": "awesome-react-calculator",
   "version": "1.0.0",
-  "description": "awesome-react-calculator React component",
+  "description": "awesome-react-calculator",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -21,9 +21,12 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "16.x"
+    "react": "15.x"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "mathjs": "^6.0.2",
     "nwb": "0.23.x",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

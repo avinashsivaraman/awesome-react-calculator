@@ -1,0 +1,102 @@
+body {
+    --font-size:  calc(14px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
+    --font-size-large: calc(20px + (40 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+}
+
+.react-calculator {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 25% 1fr;
+}
+
+.result-panel {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    background-color: #e3e7e9;
+    text-align: right;
+    padding: 0px 1rem;
+    line-height: 1.5rem;
+    overflow: scroll;
+}
+.cur-row {
+    flex: 1;
+    color: hsl(214, 5%, 29%);
+    font-size: var(--font-size-large);
+    max-width: 100%;
+    background-color: inherit !important;
+    border: none;
+    outline: none;
+    text-align: right !important;
+}
+
+.last-row {
+    flex: 1;
+    color: #969ba3;
+    font-size: var(--font-size);
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 100%;
+}
+
+
+
+.button-panel{
+    flex: 5;
+}
+
+.button-panel .button {
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-shadow: inset 1px 1px 0 0 #e3e7e9;
+    border: none;
+    background-color: #fafafa;
+    font-size: var(--font-size);
+    line-height: 0px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #aaa;
+    opacity: 0;
+}
+
+.button-panel .clicked:before {
+    animation: react-calculator-click .5s ease-out 0s 1 alternate forwards;
+}
+
+.last {
+    color: #fff;
+    background-color: rgb(237, 141, 53) !important;
+}
+
+.button-panel:focus{
+    outline: none;
+}
+
+@keyframes react-calculator-click {
+    0% {
+        transform: scale(1);
+        opacity: .7;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
