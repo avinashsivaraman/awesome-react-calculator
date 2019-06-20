@@ -36,7 +36,7 @@ export default class ButtonPanel extends React.Component {
   }
 
   componentWillUnmount(){
-    document.removeEventListener('keydown')
+    document.removeEventListener('keydown', this.mapKeyToButton)
   }
   render() {
     return (

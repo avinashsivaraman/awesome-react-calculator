@@ -24,10 +24,17 @@ export default class Calculator extends React.Component {
       replacement.forEach((item) => {
         cur = pastedData.replace(item.dist, item.reg);
       });
-      this.setState({
-        cur: evaluate(cur).toString(),
-        last: cur
-      })
+      try {
+        this.setStateAndNotify({
+          cur: evaluate(cur).toString(),
+          last: cur
+        })
+      } catch (e) {
+        this.setStateAndNotify({
+          cur,
+          last: 'Not a valid expression'
+        })
+      }
     }
   }
 
