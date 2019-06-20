@@ -1,10 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ResultPanel, { replacement } from './ResultPanel';
 import ButtonPanel from './ButtonPanel';
 import { evaluate } from 'mathjs';
-
-import '../style/flex.css';
-import '../style/index.css';
 
 export default class Calculator extends React.Component {
   constructor() {
@@ -15,6 +13,7 @@ export default class Calculator extends React.Component {
     };
     this.onPaste = this.onPaste.bind(this)
     this.onButtonClick = this.onButtonClick.bind(this)
+    this.setStateAndNotify = this.setStateAndNotify.bind(this)
   }
 
   onPaste(event){
@@ -32,12 +31,17 @@ export default class Calculator extends React.Component {
     }
   }
 
+
+  setStateAndNotify(newState) {
+    this.setState(newState, this.props.onResultChange(newState.cur))
+  }
+
   onButtonClick(type) {
     const {cur} = this.state
     const lastLetter = cur.slice(-1);
     switch (type) {
       case 'c':
-        this.setState({
+        this.setStateAndNotify({
           last: '',
           cur: '0'
         });
@@ -48,7 +52,7 @@ export default class Calculator extends React.Component {
       case '=':
         try {
           const output = evaluate(cur).toString()
-          this.setState({
+          this.setStateAndNotify({
             last: cur + '=',
             cur: output
           });
@@ -99,6 +103,12 @@ export default class Calculator extends React.Component {
         });
         break;
       }
+      if(this.props.onButtonPress) {
+        this.props.onButtonPress(type)
+      }
+      if(this.props.onKeyPress) {
+        this.props.onKeyPress(type)
+      }
   }
   render() {
     return (
@@ -108,4 +118,10 @@ export default class Calculator extends React.Component {
       </div>
     );
   }
+}
+
+Calculator.propTypes = {
+  onButtonPress: PropTypes.func,
+  onResultChange: PropTypes.func,
+  onKeyPress: PropTypes.func
 }

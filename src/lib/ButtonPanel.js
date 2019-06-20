@@ -28,7 +28,6 @@ export default class ButtonPanel extends React.Component {
 
   componentDidMount() {
     var buttons = document.querySelectorAll('.react-calc button');
-    console.log(buttons)
     buttons = [].slice.call(buttons);
     buttons.forEach((button) => {
       this.keyMapping[button.dataset.code] = button;

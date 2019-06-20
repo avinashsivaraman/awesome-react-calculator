@@ -1,6 +1,6 @@
 {
   "name": "awesome-react-calculator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "awesome-react-calculator",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -11,7 +11,9 @@
     "umd"
   ],
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "nwb build-react-component && npm run copy-style && npm run copy-style-es",
+    "copy-style": "cp -r src/style lib/style",
+    "copy-style-es": "cp -r src/style es/style",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
     "start": "nwb serve-react-demo",
@@ -21,21 +23,26 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "15.x"
+    "react": "15.x",
+    "mathjs": "^6.0.2"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "mathjs": "^6.0.2",
     "nwb": "0.23.x",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "author": "",
-  "homepage": "",
+  "author": "avinash sivaraman",
+  "homepage": "https://github.com/avinashsivaraman/awesome-react-calculator",
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avinashsivaraman/awesome-react-calculator.git"
+  },
   "keywords": [
-    "react-component"
+    "react-component",
+    "calculator",
+    "react"
   ]
 }

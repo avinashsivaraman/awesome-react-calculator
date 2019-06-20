@@ -7,10 +7,20 @@ const style = {
   width: '15rem'
 }
 class Demo extends Component {
+  handleInput(input) {
+    console.log(`${input} key is pressed or entered`)
+  }
+
+  onResultChange(newResult) {
+    console.log(`${newResult} has been shown`)
+  }
   render() {
     return <div className='calculator-demo' style={style}>
       <h1>Calculator</h1>
-      <Calculator/>
+      <Calculator
+        onKeyPress={this.handleInput}
+        onButtonClick={this.handleInput}
+        onResultChange={this.onResultChange}/>
     </div>
   }
 }
