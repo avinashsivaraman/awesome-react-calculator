@@ -20,7 +20,7 @@ class Demo extends Component {
       <Calculator
         onKeyPress={this.handleInput}
         onButtonClick={this.handleInput}
-        onResultChange={this.onResultChange}/>
+         onResultChange={this.onResultChange}/>
     </div>
   }
 }

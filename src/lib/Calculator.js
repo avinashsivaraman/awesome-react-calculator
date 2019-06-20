@@ -33,7 +33,7 @@ export default class Calculator extends React.Component {
 
 
   setStateAndNotify(newState) {
-    this.setState(newState, this.props.onResultChange(newState.cur))
+    this.setState(newState, this.props.onResultChange ? this.props.onResultChange(newState.cur) : null)
   }
 
   onButtonClick(type) {
