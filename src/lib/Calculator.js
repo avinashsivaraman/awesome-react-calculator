@@ -40,7 +40,7 @@ export default class Calculator extends React.Component {
 
 
   setStateAndNotify(newState) {
-    this.setState(newState, this.props.onResultChange ? this.props.onResultChange(newState.cur) : null)
+    this.setState(newState, this.props.onResultChange ? this.props.onResultChange({expression: newState.last, result: newState.curr}) : null)
   }
 
   onButtonClick(type) {
@@ -110,11 +110,8 @@ export default class Calculator extends React.Component {
         });
         break;
       }
-      if(this.props.onButtonPress) {
-        this.props.onButtonPress(type)
-      }
-      if(this.props.onKeyPress) {
-        this.props.onKeyPress(type)
+      if(this.props.onNewInput) {
+        this.props.onNewInput({expression: cur, key: type})
       }
   }
   render() {
@@ -128,7 +125,6 @@ export default class Calculator extends React.Component {
 }
 
 Calculator.propTypes = {
-  onButtonPress: PropTypes.func,
+  onNewInput: PropTypes.func,
   onResultChange: PropTypes.func,
-  onKeyPress: PropTypes.func
 }
