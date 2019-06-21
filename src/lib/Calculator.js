@@ -14,6 +14,8 @@ export default class Calculator extends React.Component {
     this.onPaste = this.onPaste.bind(this)
     this.onButtonClick = this.onButtonClick.bind(this)
     this.setStateAndNotify = this.setStateAndNotify.bind(this)
+    this.keyMap = {}
+    this.handleKeyDown = this.handleKeyDown.bind(this)
   }
 
   onPaste(event){
@@ -38,9 +40,18 @@ export default class Calculator extends React.Component {
     }
   }
 
-
   setStateAndNotify(newState) {
     this.setState(newState, this.props.onResultChange ? this.props.onResultChange({expression: newState.last, result: newState.cur}) : null)
+  }
+
+  handleKeyDown (event) {
+    let button;
+    const key = (event.shiftKey ? 'shift+' : '') + event.keyCode || event.which;
+    if (button = this.keyMap[key]) {
+      button.click();
+      event.stopPropagation();
+      event.preventDefault();
+    }
   }
 
   onButtonClick(type) {
@@ -116,9 +127,13 @@ export default class Calculator extends React.Component {
   }
   render() {
     return (
-      <div className="react-calculator" onPaste={this.onPaste}>
+      <div className="react-calculator"
+        onPaste={this.onPaste}
+        onKeyDown={this.handleKeyDown}>
         <ResultPanel {...this.state} />
-        <ButtonPanel onClick={this.onButtonClick}/>
+        <ButtonPanel
+          onClick={this.onButtonClick}
+          onLoad={keyMap => {this.keyMap = keyMap}}/>
       </div>
     );
   }

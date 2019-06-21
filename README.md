@@ -3,7 +3,7 @@
 Awesome React Calculator is a React Component library. It gives you a simple calculator component to work in your project. It supports keyboard and you can paste your expression to get the result.
 
 
-[![npm version](https://img.shields.io/badge/npm-1.0.5-blue.svg)](https://www.npmjs.com/package/awesome-react-calculator)
+[![npm version](https://img.shields.io/badge/npm-1.0.7-blue.svg)](https://www.npmjs.com/package/awesome-react-calculator)
 
 ## Installation
 
@@ -16,9 +16,9 @@ npm install -S awesome-react-calculator
 yarn add awesome-react-calculator
 ```
 
-## Live Demo or Example
+## Live Examples
 
-[Live Demo](https://csb-ncxvw.netlify.com/) or [Usage](https://codesandbox.io/embed/loving-bird-ncxvw)
+[Live Demo](https://csb-ncxvw.netlify.com/) or [Live Coding](https://codesandbox.io/embed/loving-bird-ncxvw)
 
 
 ## Usage
@@ -65,7 +65,8 @@ render(<Demo/>, document.querySelector('#demo'))
 
 
 ### Note
-Please set the **width and height** of the parent div of our the <Calculator /> Component
+
+Please set the **width and height** of the parent div of our the `<Calculator />` Component
 
 
 ## Contributing

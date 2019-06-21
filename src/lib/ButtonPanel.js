@@ -3,10 +3,9 @@ import React from 'react';
 export default class ButtonPanel extends React.Component {
   constructor() {
     super();
-    this.keyMapping = {};
     this.onClick = this.onClick.bind(this)
-    this.mapKeyToButton = this.mapKeyToButton.bind(this)
   }
+
   onClick(event){
     var target = event.target;
     target.classList.remove('clicked');
@@ -16,28 +15,16 @@ export default class ButtonPanel extends React.Component {
     this.props.onClick(target.dataset.value);
   }
 
-  mapKeyToButton(event){
-      var button;
-      var key = (event.shiftKey ? 'shift+' : '') + event.keyCode || event.which;
-      if (button = this.keyMapping[key]) {
-        button.click();
-        event.stopPropagation();
-        event.preventDefault();
-      }
-  }
-
   componentDidMount() {
     var buttons = document.querySelectorAll('.react-calc button');
     buttons = [].slice.call(buttons);
+    const keyMapping = {}
     buttons.forEach((button) => {
-      this.keyMapping[button.dataset.code] = button;
+      keyMapping[button.dataset.code] = button;
     });
-    document.addEventListener('keydown', this.mapKeyToButton)
+    this.props.onLoad(keyMapping)
   }
 
-  componentWillUnmount(){
-    document.removeEventListener('keydown', this.mapKeyToButton)
-  }
   render() {
     return (
       <div className="react-calc button-panel row">
