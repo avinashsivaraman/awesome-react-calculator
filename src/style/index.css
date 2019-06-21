@@ -1,6 +1,4 @@
 body {
-    --font-size:  calc(14px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
-    --font-size-large: calc(20px + (40 - 14) * ((100vw - 300px) / (1600 - 300)));
     line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 
@@ -24,7 +22,7 @@ body {
 .cur-row {
     flex: 1;
     color: hsl(214, 5%, 29%);
-    font-size: var(--font-size-large);
+    font-size: 30px;
     max-width: 100%;
     background-color: inherit !important;
     border: none;
@@ -35,7 +33,7 @@ body {
 .last-row {
     flex: 1;
     color: #969ba3;
-    font-size: var(--font-size);
+    font-size: 20px;
     align-items: flex-end;
     display: flex;
     justify-content: flex-end;
@@ -56,7 +54,7 @@ body {
     box-shadow: inset 1px 1px 0 0 #e3e7e9;
     border: none;
     background-color: #fafafa;
-    font-size: var(--font-size);
+    font-size: 20px;
     line-height: 0px;
     text-align: center;
     overflow: hidden;
