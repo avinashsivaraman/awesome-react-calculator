@@ -46,6 +46,9 @@ export default class Calculator extends React.Component {
 
   handleKeyDown (event) {
     let button;
+    if(event.ctrlKey || event.keyCode === 67){
+      return
+    }
     const key = (event.shiftKey ? 'shift+' : '') + event.keyCode || event.which;
     if (button = this.keyMap[key]) {
       button.click();
