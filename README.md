@@ -3,7 +3,7 @@
 Awesome React Calculator is a React Component library. It gives you a simple calculator component to work in your project. It supports keyboard and you can paste your expression to get the result.
 
 
-[![npm version](https://img.shields.io/badge/npm-1.0.7-blue.svg)](https://www.npmjs.com/package/awesome-react-calculator)
+[![npm version](https://img.shields.io/badge/npm-1.0.9-blue.svg)](https://www.npmjs.com/package/awesome-react-calculator)
 
 ## Installation
 
