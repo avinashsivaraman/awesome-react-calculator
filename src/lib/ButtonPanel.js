@@ -30,9 +30,8 @@ export default class ButtonPanel extends React.Component {
       <div className="react-calc button-panel row">
         <div className="s3 column">
           <div className="s1 row">
-            <button className="button s1" data-code="67" data-value="c" onClick={this.onClick}>C</button>
+            <button className="button s2" data-code="67" data-value="c" onClick={this.onClick}>C</button>
             <button className="button s1" data-code="8" data-value="back" onClick={this.onClick}>←</button>
-            <button className="button s1" data-code="191" data-value="/" onClick={this.onClick}>÷</button>
           </div>
           <div className="s1 row">
             <button className="button s1" data-code="55" data-value="7" onClick={this.onClick}>7</button>
@@ -55,10 +54,11 @@ export default class ButtonPanel extends React.Component {
           </div>
         </div>
         <div className="s1 column">
+          <button className="last button s1" data-code="191" data-value="/" onClick={this.onClick}>÷</button>
           <button className="last button s1" data-code="shift+56" data-value="*" onClick={this.onClick}>×</button>
           <button className="last button s1" data-code="189" data-value="-" onClick={this.onClick}>-</button>
           <button className="last button s1" data-code="shift+187" data-value="+" onClick={this.onClick}>+</button>
-          <button className="last button s2 button-equal" data-code="13" data-value="=" onClick={this.onClick}>=</button>
+          <button className="last button s1 button-equal" data-code="13" data-value="=" onClick={this.onClick}>=</button>
         </div>
       </div>
     );
