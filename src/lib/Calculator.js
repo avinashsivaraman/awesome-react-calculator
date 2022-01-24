@@ -137,10 +137,8 @@ export default class Calculator extends React.Component {
       <div className="react-calculator"
         onPaste={this.onPaste}
         onKeyDown={this.handleKeyDown}>
-        <ResultPanel {...this.state} />
-        <ButtonPanel
-          onClick={this.onButtonClick}
-          onLoad={keyMap => {this.keyMap = keyMap}}/>
+        <ResultPanel {...this.state} inputStyle={this.props.inputStyle} />
+        <ButtonPanel onClick={this.onButtonClick} onLoad={keyMap => {this.keyMap = keyMap}} />
       </div>
     );
   }
@@ -150,4 +148,5 @@ Calculator.propTypes = {
   onNewInput: PropTypes.func,
   onResultChange: PropTypes.func,
   onPaste: PropTypes.func,
+  inputStyle: PropTypes.object
 }

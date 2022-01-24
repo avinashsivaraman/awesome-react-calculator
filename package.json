@@ -1,6 +1,6 @@
 {
   "name": "awesome-react-calculator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "awesome-react-calculator",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -34,6 +34,10 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },
+  "browserslist": [
+    "cover 100%",
+    "not dead"
+  ],
   "author": "avinash sivaraman",
   "homepage": "https://github.com/avinashsivaraman/awesome-react-calculator",
   "license": "MIT",
