@@ -1,6 +1,6 @@
 {
   "name": "awesome-react-calculator",
-  "version": "1.0.9",
+  "version": "1.1.1",
   "description": "awesome-react-calculator",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -22,24 +22,31 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "mathjs": "6.0.2"
+    "mathjs": "^10.1.0"
   },
   "peerDependencies": {
-    "react": "15.x"
+    "react": "16.x"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "mathjs": "6.0.2",
-    "nwb": "0.23.x",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "nwb": "0.25.2",
+    "prop-types": "^15.8.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
+  "browserslist": [
+    "cover 100%",
+    "not dead"
+  ],
   "author": "avinash sivaraman",
   "homepage": "https://github.com/avinashsivaraman/awesome-react-calculator",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/avinashsivaraman/awesome-react-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avinashsivaraman/awesome-react-calculator/issues"
   },
   "keywords": [
     "react-component",

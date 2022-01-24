@@ -11,7 +11,7 @@
     flex-direction: column;
     background-color: #e3e7e9;
     text-align: right;
-    padding: 0px 1rem;
+    padding: 0 1rem;
     line-height: 1.5rem;
     overflow: scroll;
 }
@@ -51,7 +51,7 @@
     border: none;
     background-color: #fafafa;
     font-size: 20px;
-    line-height: 0px;
+    line-height: 0;
     text-align: center;
     overflow: hidden;
 }

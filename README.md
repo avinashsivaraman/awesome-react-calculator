@@ -3,7 +3,7 @@
 Awesome React Calculator is a React Component library. It gives you a simple calculator component to work in your project. It supports keyboard and you can paste your expression to get the result.
 
 
-[![npm version](https://img.shields.io/badge/npm-1.0.9-blue.svg)](https://www.npmjs.com/package/awesome-react-calculator)
+[![npm version](https://img.shields.io/badge/npm-1.1.0-blue.svg)](https://www.npmjs.com/package/awesome-react-calculator)
 
 ## Installation
 
@@ -43,12 +43,19 @@ class Demo extends Component {
     console.log(newResult)
     console.log(`${newResult.expression} is validated as ${newResult.result} `)
   }
+
+  onPaste(pastedData) {
+    console.log(pastedData)
+  }
+
   render() {
     return <div className='calculator-demo' style={style}>
       <h1>Calculator</h1>
       <Calculator
         onNewInput={this.handleInput}
-        onResultChange={this.onResultChange}/>
+        onResultChange={this.onResultChange}
+        onPaste={this.onPaste}
+      />
     </div>
   }
 }
@@ -60,8 +67,9 @@ render(<Demo/>, document.querySelector('#demo'))
 ### Props
 | Props  | Return Type   | Usage |
 |---|---|--- |
-| onNewInput  | object {expression: string, key: string} | Triggered when some input is entered|
-| onResultChange  | object {expression: string, result: string}  | Returns the result shown in calculator and triggered whenever the result is changed|
+| onNewInput  | object {expression: `string`, key: `string`} | Triggered when some input is entered|
+| onResultChange  | object {expression: `string`, result: `string`}  | Returns the result shown in calculator and triggered whenever the result is changed|
+| onPaste | pastedData: `string` | Triggered when some input is pasted |
 
 
 ### Note

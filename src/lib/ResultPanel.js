@@ -16,7 +16,8 @@ export default class ResultPanel extends React.Component {
   static propTypes = {
     last: PropTypes.string,
     cur: PropTypes.string,
-    onInputChange: PropTypes.func
+    onInputChange: PropTypes.func,
+    inputStyle: PropTypes.object
   };
   static defaultProps = {
     curr: '0',
@@ -34,7 +35,7 @@ export default class ResultPanel extends React.Component {
     return (
       <div className="result-panel">
         <div className="last-row">{finalLast}</div>
-        <input className="cur-row" value={finalCur} readOnly />
+        <input className="cur-row" value={finalCur} style={this.props.inputStyle} readOnly />
       </div>
     );
   }
