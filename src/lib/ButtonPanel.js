@@ -1,13 +1,13 @@
 import React from 'react';
 
 export default class ButtonPanel extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.onClick = this.onClick.bind(this)
   }
 
   onClick(event){
-    var target = event.target;
+    const target = event.target;
     target.classList.remove('clicked');
     setTimeout(() => {
       target.classList.add('clicked');
@@ -16,7 +16,7 @@ export default class ButtonPanel extends React.Component {
   }
 
   componentDidMount() {
-    var buttons = document.querySelectorAll('.react-calc button');
+    let buttons = document.querySelectorAll('.react-calc button');
     buttons = [].slice.call(buttons);
     const keyMapping = {}
     buttons.forEach((button) => {

@@ -3,8 +3,8 @@ import {render} from 'react-dom'
 
 import Calculator from '../../src'
 const style = {
-  height: '24rem',
-  width: '15rem'
+  height: '50vh',
+  width: '50vw'
 }
 class Demo extends Component {
   handleInput(input) {
@@ -15,13 +15,24 @@ class Demo extends Component {
     console.log(newResult)
     console.log(`${newResult.expression} is validated as ${newResult.result} `)
   }
+
+  onPaste(pastedData) {
+    console.log(pastedData)
+  }
+
   render() {
-    return <div className='calculator-demo' style={style}>
-      <h1>Calculator</h1>
-      <Calculator
-        onNewInput={this.handleInput}
-        onResultChange={this.onResultChange}/>
-    </div>
+    return (
+      <section style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <div className='calculator-demo' style={style}>
+          <h1>Calculator</h1>
+          <Calculator
+            onNewInput={this.handleInput}
+            onResultChange={this.onResultChange}
+            onPaste={this.onPaste}
+          />
+        </div>
+      </section>
+    )
   }
 }
 

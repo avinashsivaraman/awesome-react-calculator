@@ -5,8 +5,8 @@ import ButtonPanel from './ButtonPanel';
 import { evaluate } from 'mathjs';
 
 export default class Calculator extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       last: '',
       cur: '0'
@@ -36,6 +36,9 @@ export default class Calculator extends React.Component {
           cur,
           last: 'Not a valid expression'
         })
+      }
+      if (this.props.onPaste) {
+        this.props.onPaste({ pastedData })
       }
     }
   }
@@ -128,6 +131,7 @@ export default class Calculator extends React.Component {
         this.props.onNewInput({expression: this.state.cur, key: type})
       }
   }
+
   render() {
     return (
       <div className="react-calculator"
@@ -145,4 +149,5 @@ export default class Calculator extends React.Component {
 Calculator.propTypes = {
   onNewInput: PropTypes.func,
   onResultChange: PropTypes.func,
+  onPaste: PropTypes.func,
 }
