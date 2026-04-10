@@ -22,14 +22,14 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "mathjs": "6.0.2"
+    "mathjs": "15.2.0"
   },
   "peerDependencies": {
     "react": "15.x"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "mathjs": "6.0.2",
+    "mathjs": "15.2.0",
     "nwb": "0.23.x",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
